@@ -1,0 +1,47 @@
+---
+format: 
+  docx:
+    reference-doc: my_styles.docx
+    number-sections: true
+title: "title"
+bibliography: refs.bib
+csl: apa.csl
+crossref: 
+  fig-title: Fig.
+author:
+  - Marcus W Beck:
+      email: mbeck@tbep.org
+      orcid: 0000-0002-4996-0059
+      institute: [TBEP]
+      correspondence: true
+  - Edward T Sherwood:
+      email: esherwood@tbep.org
+      orcid: 0000-0001-5330-302X
+      institute: [TBEP]
+      correspondence: false
+
+institute:
+  - TBEP: Tampa Bay Estuary Program, 263 13th Ave S., Suite 350, St. Petersburg, Florida 33701 USA
+
+filters: 
+  - templates/scholarly-metadata.lua
+  - templates/author-info-blocks.lua
+  
+execute: 
+  echo: false
+  warning: false
+  ft.keepnext: false
+  ft.align: left
+---
+
+```{r}
+#| results: hide
+library(knitr)
+```
+
+## Abstract {.unnumbered}
+
+{{< pagebreak >}}
+
+
+## References {.unnumbered}
