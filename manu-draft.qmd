@@ -39,9 +39,30 @@ execute:
 library(knitr)
 ```
 
-## Abstract {.unnumbered}
+## Abstract (150-250 words) {.unnumbered}
 
 {{< pagebreak >}}
 
+## Introduction (500-1500 words)
+
+Provide background for the instructor that helps integrate the case study into disciplinary material and, if possible, relate the case study to ABET General Criteria (Student Outcomes 1-7), Program Criteria for Civil Engineering and Environmental Engineering, and general definitions and statements (e.g., ABET’s Statement on Implementing DEI Concepts into Program Criteria).  The references in this section should focus on pedagogical aspects of the case study. As Section Editor, I can assist with the latter. 
+
+## Background (1000-2000 words)
+
+Provide background information for the study that relates to the events, design process, etc. Make sure to include sufficient information (including pictures, figures, graphs, etc.) so that a novice (i.e., student) can understand the case study. Include references to the events that allow for the reader to investigate further. 
+
+## Student Activities (500-1000 words)
+
+### Classroom discussion questions
+
+Include at least 3 discussion questions based on the case study that can be used in a classroom situation.
+
+### Individual student responses
+
+Include at least 3 questions/prompts based on the case study that can be used in a homework assignment or on an exam. These could include further reading (be sure to provide references to readily available materials) or personal reflections. 
+
+## Conclusion (500-1000 words)
+
+Include a discussion of key take-aways. 
 
 ## References {.unnumbered}
