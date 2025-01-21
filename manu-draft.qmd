@@ -19,9 +19,20 @@ author:
       orcid: 0000-0001-5330-302X
       institute: [TBEP]
       correspondence: false
+  - Sarina J Ergas:
+      email: sergas@usf.edu
+      orcid: 0000-0001-6820-7196
+      institute: [USF]
+      correspondence: false
+  - Jeffrey A Cunningham:
+      email: cunning@usf.edu
+      orcid: 0000-0001-9654-8262
+      institute: [USF]
+      correspondence: false
 
 institute:
   - TBEP: Tampa Bay Estuary Program, 263 13th Ave S., Suite 350, St. Petersburg, Florida 33701 USA
+  - USF: University of South Florida, Department of Civil and Environmental Engineering, 4202 East Fowler Avenue, ENG 030, Tampa, Florida 33620 USA
 
 filters: 
   - templates/scholarly-metadata.lua
@@ -41,13 +52,33 @@ library(knitr)
 
 ## Abstract (150-250 words) {.unnumbered}
 
-Mining activities can support local and global economies, yet also impose significant consequences for the natural environment. Fertilizer mining in central Florida has been ongoing for decades and many facilities present risks to freshwater and coastal aquatic environments in the state. In 2021, a breach in the liner of a wastewater containment stack at Piney Point, a legacy phosphate mining facility, resulted in the emergency discharge of \~815 million liters of highly acidic and nutrient-laden process water into Tampa Bay. A multi-agency, event-response monitoring program resulted and documented water quality and ecosystem impacts within several months of the event. Short-term declines in water quality were observed, with a notable red tide event and substantial fish kills occurring three months after the initial wastewater release. The long-term recovery of Tampa Bay over the last 30 years has demonstrated that coordination among public and private entities can lead to improved water quality and seagrass growth. Acute spill events like the 2021 emergency release from Piney Point threaten past successes in bay management and efforts to mitigate and prevent these negative outcomes in the future are ongoing. This chapter will provide an updated, longer-term view of the ecosystem recovery that has occurred 3-4 years after the initial emergency discharge event, while also considering the historical context of long-term bay recovery.
+Mining activities can support local and global economies, yet also impose significant consequences for the natural environment. Phosphate mining in central Florida has been ongoing for decades and many facilities present risks to freshwater and coastal aquatic environments in the state. In 2021, a breach in the liner of a wastewater holding pond at Piney Point, a legacy phosphate processing facility, resulted in the emergency discharge of \~815 million liters of highly acidic and nutrient-laden (nitrogen, phosphorus) process water into Tampa Bay. A multi-agency, event-response monitoring program resulted, which documented water quality and ecosystem impacts within several months of the event. Short-term declines in water quality were observed, with a notable harmful algal bloom event and substantial fish kills occurring three months after the initial wastewater release. The long-term recovery of Tampa Bay over the last 30 years has demonstrated that coordination among public and private entities can lead to improved water quality and seagrass growth. Acute spill events like the 2021 emergency release from Piney Point threaten past successes in bay management and efforts to mitigate and prevent these negative outcomes in the future are ongoing. This chapter will provide an updated, longer-term view of the ecosystem recovery that has occurred 3-4 years after the initial emergency discharge event, while also considering the historical context of long-term bay recovery.
 
 {{< pagebreak >}}
 
 ## Introduction (500-1500 words)
 
 Provide background for the instructor that helps integrate the case study into disciplinary material and, if possible, relate the case study to ABET General Criteria (Student Outcomes 1-7), Program Criteria for Civil Engineering and Environmental Engineering, and general definitions and statements (e.g., ABET’s Statement on Implementing DEI Concepts into Program Criteria). The references in this section should focus on pedagogical aspects of the case study. As Section Editor, I can assist with the latter.
+
+ABET General Criteria Student Outcomes:
+
+1\. an ability to identify, formulate, and solve complex engineering problems by applying principles of engineering, science, and mathematics.
+
+1\. an ability to apply engineering design to produce solutions that meet specified needs with consideration of public health, safety, and welfare, as well as global, cultural, social, environmental, and economic factors.
+
+1\. an ability to communicate effectively with a range of audiences.
+
+1\. an ability to recognize ethical and professional responsibilities in engineering situations and make informed judgments, which must consider the impact of engineering solutions in global, economic, environmental, and societal contexts.
+
+1\. an ability to function effectively on a team whose members together provide leadership, create a collaborative and inclusive environment, establish goals, plan tasks, and meet objectives.
+
+1\. an ability to develop and conduct appropriate experimentation, analyze and interpret data, and use engineering judgment to draw conclusions.
+
+1\. an ability to acquire and apply new knowledge as needed, using appropriate learning strategies.
+
+Regarding DEI. The ABET information can be found here <https://www.abet.org/about-abet/idea-inclusion-diversity-equity-accessibility/> Social justice issues relevant to the spill could be addressed.
+
+This case study provides an example of the roles and responsibilities of public institutions and private organizations and how they can work together to address environmental problems (Environmental Engineering Program Criterion e)
 
 ## Background (1000-2000 words)
 
