@@ -85,9 +85,43 @@ Regarding DEI. The ABET information can be found here <https://www.abet.org/abou
 
 This case study provides an example of the roles and responsibilities of public institutions and private organizations and how they can work together to address environmental problems (Environmental Engineering Program Criterion e)
 
+My notes:
+
+This is about bay management as the engineering challenge - strength of partnerships, key players, and how they work together to manage the bay.  What are the threats and challenges to bay management? How has it been effective in the past? What is the role of TBEP and, more generally, research/volunteerism/regulation? This is the engineering problem.
+
+Managing the bay and protecting water quality is the design process, constraints to this are economic, political, and social forces that are at odds with environmental protection
+
+Role of data/monitoring to support bay management - make this a key concept that relates to Piney Point. 
+
+Introduce mining as an economic driver in Central Florida, highlight past environmental issues with mining in the region (earlier Piney Point spills, Mosaic/Alafia), also chronic issues with port facilities and fertilizer losses
+
+What is it about fertilizer mining that creates problems? A waste-intensive process... many facilities located near critical infrastructure to support transport (ports)
+
+Introduce Piney Point and events of 2021
+
 ## Background (1000-2000 words)
 
 Provide background information for the study that relates to the events, design process, etc. Make sure to include sufficient information (including pictures, figures, graphs, etc.) so that a novice (i.e., student) can understand the case study. Include references to the events that allow for the reader to investigate further.
+
+My notes:
+
+History of Piney Point - emphasis on facility management, oversight (or lack of), multiple owners.
+
+Why was there an emergency discharge? 
+
+What was the response - monitoring effort and environmental (short-term, red tide, present), legal outcomes
+
+What did TBEP do? updates, facilitate monitoring, dashboard, media requests
+
+long-term closure plan for piney point, other facilities in the region - deep well injection, disposal of phosphogypum via road construction?  Piney Point well may be precedent for future activities, but still a lot of unknowns, related to groundwater/drinking water?
+
+Figures:
+
+- map
+- water quality
+- red tide
+- seagrass/macro?
+- fisheries (we now have good nekton data to report)
 
 ## Student Activities (500-1000 words)
 
@@ -95,12 +129,30 @@ Provide background information for the study that relates to the events, design 
 
 Include at least 3 discussion questions based on the case study that can be used in a classroom situation.
 
+My notes:
+
+Something about communication/transparency of information 
+
+Something about history of past partnerships, why were they so important
+
+Something about reactive v proactive, i.e., Piney Point was a disaster waiting to happen, but somethign was only done once it happened.  What are the forces at play that prevent proactive action?
+
 ### Individual student responses
 
 Include at least 3 questions/prompts based on the case study that can be used in a homework assignment or on an exam. These could include further reading (be sure to provide references to readily available materials) or personal reflections.
 
+My notes:
+
+Something about interpretation of the figures/tables in this chapter
+
 ## Conclusion (500-1000 words)
 
 Include a discussion of key take-aways.
+
+My notes:
+
+Bring everybody to the table (highlight Mosaic's role in the TBNMC)
+
+Something about resiliency and the bay's ability to recover from this event
 
 ## References {.unnumbered}
