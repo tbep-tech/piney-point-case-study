@@ -67,19 +67,19 @@ Provide background for the instructor that helps integrate the case study into d
 
 ABET General Criteria Student Outcomes:
 
-1\. an ability to identify, formulate, and solve complex engineering problems by applying principles of engineering, science, and mathematics.
+1. an ability to identify, formulate, and solve complex engineering problems by applying principles of engineering, science, and mathematics.
 
-1\. an ability to apply engineering design to produce solutions that meet specified needs with consideration of public health, safety, and welfare, as well as global, cultural, social, environmental, and economic factors.
+1. an ability to apply engineering design to produce solutions that meet specified needs with consideration of public health, safety, and welfare, as well as global, cultural, social, environmental, and economic factors.
 
-1\. an ability to communicate effectively with a range of audiences.
+1. an ability to communicate effectively with a range of audiences.
 
-1\. an ability to recognize ethical and professional responsibilities in engineering situations and make informed judgments, which must consider the impact of engineering solutions in global, economic, environmental, and societal contexts.
+1. an ability to recognize ethical and professional responsibilities in engineering situations and make informed judgments, which must consider the impact of engineering solutions in global, economic, environmental, and societal contexts.
 
-1\. an ability to function effectively on a team whose members together provide leadership, create a collaborative and inclusive environment, establish goals, plan tasks, and meet objectives.
+1. an ability to function effectively on a team whose members together provide leadership, create a collaborative and inclusive environment, establish goals, plan tasks, and meet objectives.
 
-1\. an ability to develop and conduct appropriate experimentation, analyze and interpret data, and use engineering judgment to draw conclusions.
+1. an ability to develop and conduct appropriate experimentation, analyze and interpret data, and use engineering judgment to draw conclusions.
 
-1\. an ability to acquire and apply new knowledge as needed, using appropriate learning strategies.
+1. an ability to acquire and apply new knowledge as needed, using appropriate learning strategies.
 
 Regarding DEI. The ABET information can be found here <https://www.abet.org/about-abet/idea-inclusion-diversity-equity-accessibility/> Social justice issues relevant to the spill could be addressed.
 
@@ -98,6 +98,14 @@ Introduce mining as an economic driver in Central Florida, highlight past enviro
 What is it about fertilizer mining that creates problems? A waste-intensive process... many facilities located near critical infrastructure to support transport (ports)
 
 Introduce Piney Point and events of 2021
+
+Effective management of the natural environment requires concerted public and private efforts informed by science to ensure the long-term sustainability of environmental resources. Management goals are nearly always relative to competing societal interests that are at odds with a healthy, naturally functioning environment.  The contemporary history of Tampa Bay, Florida is an exemplary model for how such efforts can be successful to recover a degraded aquatic environment.  In February 1974, a news segment airing on Sixty Minutes drew national attention on the effects of unchecked growth in the region, while noxious macroalgal blooms, loss of seagrass, and a decline in fisheries were evidence of this growth. The discharge of untreated wastewater into Tampa Bay was a culprit for many of these maladies.  Several decades later, external nutrient loads to the bay were reduced by 2/3 and seagrasses recovered to an all-time high (since recorded) of 41,656 acres in 2016, exceeding the management goal by several thousand acres.  
+
+The events leading up to the recovery of Tampa Bay are the product of multiple factors, some of which were opportune while others were more intentional.  In the 1960s, a growing nationwide environmental movement influenced public sentiment on how unchecked economic growth and development can severely harm the environment.  Notable events such as the Cuyahoga River catching on fire and widely read texts like "Silent Spring" further motivated change in a national environmental ethic.  These sentiments trickled down to Tampa Bay communities as local environmental disasters combined with unfettered growth lead to public calls for local and state regulatory reform and environmental restoration. No longer was it considered acceptable to discharge untreated sewage directly to the bay, as legislation was passed that required all wastewater treatment plants to upgrade to advanced treatment technologies in addition to tighter controls on stormwater pollution.  These efforts were reinforced at the federal level with enactment of the Clean Water Act in the same year. Gradually and over several decades, water quality in the bay improved and the seagrasses returned.  
+
+Local public and private environmental groups continue to be key players in coalescing public support to improve water quality in Tampa Bay. The Tampa Bay Estuary Program (TBEP), in particular, has been a consistent voice over the last three decades that has worked to build partnerships to restore and protect Tampa Bay.  This work is implemented through a scientifically sound, community-based management plan.  The TBEP is part of a broader National Estuary Program consisting of 28 similar programs around the country that have been established at Congressionally recognized "estuaries of national significance".  Since 1991, the TBEP has worked to engage local communities, private businesses, and local/state government to work towards the comment good of a healhty Tampa Bay.  The TBEP also manages the Tampa Bay Nitrogen Management Consortium that has worked to reduce nitrogen loads as a key pollutant to the Bay, with a primary source being wastewater and stormwater.  The management approach is simple; reduced nitrogen loads will lower algal growth, promoting a light environment in the water that is supportive of seagrass growth.  The TBNMC has quantified and allocated sources of nitrogen among public entities that directly or indirectly discharge to the bay, with regulatory oversight by the Florida Department of Environmental Protection (FDEP). 
+
+Despite the nationally recognized success story of Tampa Bay, current challenges have emerged that threaten past successes and bring into question the effectiveness of existing management paradigms.  From 2016 to 2024, seagrasses have declined baywide by  
 
 ## Background (1000-2000 words)
 
