@@ -1,10 +1,10 @@
 library(gmailr)
+library(tidyverse)
 
-pth <- 'C:/Users/mbeck/AppData/Local/gmailr/gmailr/client_secret_874526830294-43165uq3qcgbo0bhel12jnqcm6t1vaoj.apps.googleusercontent.com.json'
+# get emails ----------------------------------------------------------------------------------
 
-gm_auth_configure(path = pth)
-
-gm_oauth_app()
+gm_auth_configure()
+gm_oauth_client()
 
 search_query <- "subject:\"Piney Point Update -\""
 
@@ -22,9 +22,10 @@ while(more_messages) {
   if(length(gm_id(emails)) > 0) {
     all_message_ids <- c(all_message_ids, gm_id(emails))
     
+    next_page <- emails[1][[1]]$nextPageToken
+    
     # Check if there are more pages
-    if(!is.null(emails[1][[1]]$nextPageToken)) {
-      next_page <- emails[1][[1]]$nextPageToken
+    if(!is.null(next_page)) {
       cat("Retrieved", length(all_message_ids), "emails so far, fetching more...\n")
     } else {
       more_messages <- FALSE
@@ -58,4 +59,6 @@ extract_email_body <- function(message_id) {
 
 # Apply the function to each email found
 email_bodies <- lapply(all_message_ids, extract_email_body)
+
+save(email_bodies, file = here::here("data/email_bodies.RData"))
 
