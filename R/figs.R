@@ -1,5 +1,135 @@
 library(tidyverse)
 library(ggrepel)
+library(sf)
+library(here)
+library(patchwork)
+
+source(here('R/funcs.R'))
+
+# seagrass change -----------------------------------------------------------------------------
+
+allmngests <- rdataload('https://github.com/tbep-tech/seagrass-analysis/raw/refs/heads/main/data/allmngests.RData')
+chgdat20202022 <- rdataload('https://github.com/tbep-tech/seagrass-analysis/raw/refs/heads/main/data/chgdat20202022.RData')
+data(file = 'sgmanagement', package = 'tbeptools')
+
+ars <- list(
+  west = c(12, 16:18, 30), 
+  east = c(6:10)
+) |> 
+  enframe('side', 'number') |> 
+  unnest(number)
+
+toplo <- allmngests |> 
+  filter(
+    Areas %in% ars$number
+  ) |> 
+  filter(
+    yr %in% c(2020, 2022)
+  ) |> 
+  ungroup() |> 
+  summarise(
+    Acres = sum(Acres), 
+    .by = c(yr, Areas)
+  ) |> 
+  pivot_wider(values_from = Acres, names_from = yr) |> 
+  mutate(
+    diffacres = `2022` - `2020`
+  )
+tomap1 <- inner_join(sgmanagement, toplo, by = c('areas' = 'Areas'))
+
+maxv <- max(abs(tomap1$diffacres))
+
+# colors
+colgrn <- c("#F7FCF5", "#E5F5E0", "#C7E9C0", "#A1D99B", "#74C476", "#41AB5D", 
+            "#238B45", "#006D2C", "#00441B")
+colred <- c("#FFF5F0", "#FEE0D2", "#FCBBA1", "#FC9272", "#FB6A4A", "#EF3B2C", 
+            "#CB181D", "#A50F15", "#67000D")               
+colfun <- leaflet::colorNumeric(
+  palette = c(rev(colred), colgrn),
+  domain = c(-1 * maxv, maxv)
+)
+
+# text labels
+totxt <- st_centroid(tomap1) |> 
+  mutate(
+    lab = round(diffacres, 0)
+  )
+
+# bbox
+dat_ext <- tomap1 %>% 
+  sf::st_as_sfc() %>% 
+  sf::st_buffer(dist = units::set_units(2, kilometer)) %>%
+  sf::st_transform(crs = 4326) %>% 
+  sf::st_bbox()
+
+tls <- maptiles::get_tiles(dat_ext, provider = 'CartoDB.PositronNoLabels', zoom = 10)
+
+thm <- ggplot2::theme(
+  panel.grid = ggplot2::element_blank(), 
+  axis.title = ggplot2::element_blank(), 
+  axis.text.y = ggplot2::element_text(size = ggplot2::rel(0.7)), 
+  axis.text.x = ggplot2::element_text(size = ggplot2::rel(0.7), angle = 30, hjust = 1),
+  axis.ticks = ggplot2::element_line(colour = 'grey'),
+  panel.background = ggplot2::element_rect(fill = NA, color = 'black'), 
+  legend.position = 'top', 
+  legend.title.position = 'top',
+  legend.key.width = unit(1, "cm"),
+  legend.key.height = unit(0.25, "cm"),
+  legend.title = element_text(hjust = 0.5)
+) 
+
+m1 <- ggplot2::ggplot() + 
+  tidyterra::geom_spatraster_rgb(data = tls, maxcell = 1e8) +
+  ggplot2::geom_sf(data = tomap1, aes(fill = tomap1$diffacres), color = 'black', inherit.aes = F, alpha = 0.7) +
+  ggplot2::geom_sf_label(data = totxt, ggplot2::aes(label = lab), size = 3, alpha = 0.8, inherit.aes = F) +
+  scale_fill_gradientn(
+    colors = c(rev(colred), colgrn),
+    values = scales::rescale(c(seq(-maxv, 0, length.out = length(colred)),
+                               seq(0, maxv, length.out = length(colgrn)))),
+    limits = c(-maxv, maxv),
+    na.value = "grey50"
+  ) +
+  thm + 
+  ggspatial::annotation_scale(location = 'bl', unit_category = 'metric', height = unit(0.2, "cm"), text_cex = 0.5) +
+  ggspatial::annotation_north_arrow(location = 'tl', height = unit(1, 'cm'), width = unit(1, 'cm')) +
+  labs(
+    fill = 'Change in acres, 2020 - 2022'
+  )
+
+dat_ext <- dat_ext %>% 
+  sf::st_as_sfc(dat_ext) %>% 
+  sf::st_transform(crs = 4326) %>% 
+  sf::st_bbox()
+
+# set coordinates because vector not clipped
+m1 <- m1 +
+  ggplot2::coord_sf(xlim = dat_ext[c(1, 3)], ylim = dat_ext[c(2, 4)], expand = FALSE, crs = 4326)
+
+tomap2 <- chgdat20202022[sgmanagement[sgmanagement$areas %in% ars$number, ], ] |> 
+  mutate(
+    var = factor(var, levels = c("lost", "gained"))
+  )
+
+m2 <- ggplot2::ggplot() + 
+  tidyterra::geom_spatraster_rgb(data = tls, maxcell = 1e8) +
+  ggplot2::geom_sf(data = tomap2, aes(fill = var), color = NA, inherit.aes = F, alpha = 0.7) +
+  ggplot2::geom_sf(data = tomap1, fill = NA, color = 'black', inherit.aes = F, alpha = 0.7) +
+  scale_fill_manual(values = c('lost' = "#EF3B2C", gained = "#41AB5D")) +
+  thm + 
+  theme(
+    axis.text.y = ggplot2::element_blank()
+  ) +
+  labs(
+    fill = 'Areas lost or gained, 2020 - 2022'
+  ) +
+  ggplot2::coord_sf(xlim = dat_ext[c(1, 3)], ylim = dat_ext[c(2, 4)], expand = FALSE, crs = 4326)
+
+
+m <- m1 + m2 + plot_layout(ncol = 2)
+
+png(here("figs", "seagrasschange.png"), width = 7.5, height = 5, units = "in", res = 400)
+print(m)
+dev.off()
 
 # site closure from emails --------------------------------------------------------------------
 
@@ -85,3 +215,4 @@ p <- ggplot() +
 png(here::here("figs", "siteclose.png"), width = 9, height = 4, units = "in", res = 400)
 print(p)
 dev.off()
+
