@@ -142,7 +142,7 @@ Something about resiliency and the bay's ability to recover from this event
 
 ## Figures {.unnumbered}
 
-![The Tampa Bay watershed and Piney Point.  Bay segments, holding ponds, and other relevant locations are shown. NGS-N: New Gypsum Stack North; NGS-S: New Gypsum Stack South; OGS-N: Old Gypsum Stack North; OGS-S: Old Gypsum Stack South. Basemap credits: Esri, HERE, Garmin, OpenStreetMap, Maxar, and Earthstar Geographics.](figs/map.jpg){#fig-map}
+![The Tampa Bay watershed and Piney Point.  Bay segments, holding ponds, and other relevant locations are shown. County boundaries are labeled with paired county names. NGS-N: New Gypsum Stack North; NGS-S: New Gypsum Stack South; OGS-N: Old Gypsum Stack North; OGS-S: Old Gypsum Stack South. Basemap credits: Esri, HERE, Garmin, OpenStreetMap, Maxar, and Earthstar Geographics.](figs/map.jpg){#fig-map}
 
 {{< pagebreak >}}
 
