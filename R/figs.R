@@ -32,6 +32,107 @@ png(here("figs", "wqchange.png"), width = 8.5, height = 3.5, units = "in", res =
 print(p)
 dev.off()
 
+# reported fish kills -------------------------------------------------------------------------
+
+weeklv <- seq.Date(from = as.Date('2021-01-03'), to = as.Date('2021-10-01'), by = 'days') %>% 
+  lubridate::floor_date(unit = 'week') %>% 
+  unique
+
+fishdat <- read.csv(here('data-raw/FishKillResultReport.csv')) %>% 
+  select(
+    date = textBox6, 
+    county = tEMPDataTextBox,
+    location = cOUNTYDataTextBox, 
+    species = textBox18
+  ) %>% 
+  mutate(
+    date = mdy(date),
+    county = gsub('\\s+$', '', county), 
+    county = case_when(
+      county == 'pinellas' ~ 'Pinellas', 
+      county == 'hillsborough' ~ 'Hillsborough', 
+      T ~ county
+    ),
+    week = floor_date(date, unit = 'week'),
+    county = factor(county)
+  ) %>%
+  summarize(
+    cnt = sum(!is.na(species)),
+    .by = c(week, county)
+  ) |> 
+  rename(County = county)
+
+toplo1 <- fishdat |> 
+  mutate(
+    yr = year(week)
+  ) |> 
+  summarise(
+    cnt = sum(cnt), 
+    .by = c(yr, County)
+  ) |> 
+  complete(
+    yr = seq(min(yr), max(yr), 1), 
+    County, 
+    fill = list(cnt = 0)
+  )
+
+toplo2 <- fishdat |> 
+  filter(year(week) == 2021) |> 
+  complete(
+    week = weeklv,
+    County, 
+    fill = list(cnt = 0)
+  )
+
+p1 <- ggplot(toplo1, aes(x = yr, y = cnt, fill = County)) + 
+  geom_bar(stat = 'identity', colour = 'darkgrey') + 
+  labs(
+    x = NULL,
+    y = 'No. of fish kill reports', 
+    subtitle = '(a) By year'
+  ) +
+  scale_y_continuous(expand = c(0, 0)) + 
+  scale_x_continuous(breaks = seq(min(toplo1$yr), max(toplo1$yr), 1)) +
+  scale_fill_brewer(palette = 'Pastel1', drop = T) + 
+  theme_minimal() + 
+  theme(
+    axis.ticks.x = element_line(), 
+    axis.text.x = element_text(angle = 45, size = 8, hjust = 1),
+    legend.position = 'top', 
+    panel.grid.minor.y = element_blank(), 
+    panel.grid.minor.x = element_blank(), 
+    panel.grid.major.x = element_blank(), 
+    plot.caption = element_text(size = 10)
+  )
+
+p2 <- ggplot(toplo2, aes(x = week, y = cnt, fill = County)) + 
+  geom_bar(stat = 'identity', colour = 'darkgrey') + 
+  labs(
+    x = NULL, 
+    y = 'No. of fish kill reports', 
+    subtitle = '(b) 2021 week of'
+  ) +
+  scale_y_continuous(expand = c(0, 0)) + 
+  scale_x_date(breaks = weeklv, date_labels = '%b %d', limits = range(weeklv)) +
+  scale_fill_brewer(palette = 'Pastel1', drop = T) + 
+  theme_minimal() + 
+  theme(
+    axis.ticks.x = element_line(), 
+    axis.text.x = element_text(angle = 45, size = 8, hjust = 1),
+    legend.position = 'top', 
+    panel.grid.minor.y = element_blank(), 
+    panel.grid.minor.x = element_blank(), 
+    panel.grid.major.x = element_blank(), 
+    plot.caption = element_text(size = 10)
+  )
+
+p <- p1 + p2 + guide_area() +  
+  plot_layout(ncol = 1, guides = 'collect', axis_titles = 'collect', heights = c(1, 1, 0.1))
+
+png(here('figs/fishkill.png'), family = 'Lato', height = 4.5, width = 8, units = 'in', res = 300)
+print(p)
+dev.off()
+
 # seagrass change -----------------------------------------------------------------------------
 
 allmngests <- rdataload('https://github.com/tbep-tech/seagrass-analysis/raw/refs/heads/main/data/allmngests.RData')
