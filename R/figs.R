@@ -1,3 +1,5 @@
+# setup ---------------------------------------------------------------------------------------
+
 library(tidyverse)
 library(ggrepel)
 library(sf)
@@ -34,33 +36,11 @@ dev.off()
 
 # reported fish kills -------------------------------------------------------------------------
 
-weeklv <- seq.Date(from = as.Date('2021-01-03'), to = as.Date('2021-10-01'), by = 'days') %>% 
+load(file = here('data/fishdat.RData'))
+
+weeklv <- seq.Date(from = as.Date('2021-01-03'), to = as.Date('2021-12-31'), by = 'days') %>% 
   lubridate::floor_date(unit = 'week') %>% 
   unique
-
-fishdat <- read.csv(here('data-raw/FishKillResultReport.csv')) %>% 
-  select(
-    date = textBox6, 
-    county = tEMPDataTextBox,
-    location = cOUNTYDataTextBox, 
-    species = textBox18
-  ) %>% 
-  mutate(
-    date = mdy(date),
-    county = gsub('\\s+$', '', county), 
-    county = case_when(
-      county == 'pinellas' ~ 'Pinellas', 
-      county == 'hillsborough' ~ 'Hillsborough', 
-      T ~ county
-    ),
-    week = floor_date(date, unit = 'week'),
-    county = factor(county)
-  ) %>%
-  summarize(
-    cnt = sum(!is.na(species)),
-    .by = c(week, county)
-  ) |> 
-  rename(County = county)
 
 toplo1 <- fishdat |> 
   mutate(
@@ -92,7 +72,7 @@ p1 <- ggplot(toplo1, aes(x = yr, y = cnt, fill = County)) +
     subtitle = '(a) By year'
   ) +
   scale_y_continuous(expand = c(0, 0)) + 
-  scale_x_continuous(breaks = seq(min(toplo1$yr), max(toplo1$yr), 1)) +
+  scale_x_continuous(breaks = seq(min(toplo1$yr), max(toplo1$yr), 1), expand = c(0.01, 0.01)) +
   scale_fill_brewer(palette = 'Pastel1', drop = T) + 
   theme_minimal() + 
   theme(
@@ -113,7 +93,7 @@ p2 <- ggplot(toplo2, aes(x = week, y = cnt, fill = County)) +
     subtitle = '(b) 2021 week of'
   ) +
   scale_y_continuous(expand = c(0, 0)) + 
-  scale_x_date(breaks = weeklv, date_labels = '%b %d', limits = range(weeklv)) +
+  scale_x_date(breaks = weeklv, date_labels = '%b %d', limits = range(weeklv), expand = c(0.01, 0.01)) +
   scale_fill_brewer(palette = 'Pastel1', drop = T) + 
   theme_minimal() + 
   theme(
@@ -129,7 +109,7 @@ p2 <- ggplot(toplo2, aes(x = week, y = cnt, fill = County)) +
 p <- p1 + p2 + guide_area() +  
   plot_layout(ncol = 1, guides = 'collect', axis_titles = 'collect', heights = c(1, 1, 0.1))
 
-png(here('figs/fishkill.png'), family = 'Lato', height = 4.5, width = 8, units = 'in', res = 300)
+png(here('figs/fishkill.png'), height = 4.5, width = 8, units = 'in', res = 300)
 print(p)
 dev.off()
 

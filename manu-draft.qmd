@@ -150,7 +150,7 @@ Something about resiliency and the bay's ability to recover from this event
 
 {{< pagebreak >}}
 
-![Fish kill reports for Hillsborough, Manatee, and Pinellas Counties that border Tampa Bay.  Plot (a) shows reports by year and plot (b) shows reports by week for 2021. Data from Florida Fish and Wildlife Commission.](figs/fishkill.png){#fig-fishkill}
+![Fish kill reports for Hillsborough, Manatee, and Pinellas Counties that border Tampa Bay.  Plot (a) shows reports by year and plot (b) shows reports by week for 2021. Data from Florida Fish and Wildlife Commission fish kill hotline.](figs/fishkill.png){#fig-fishkill}
 
 {{< pagebreak >}}
 
