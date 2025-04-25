@@ -3,8 +3,34 @@ library(ggrepel)
 library(sf)
 library(here)
 library(patchwork)
+library(NADA)
+library(scales)
+library(grid)
+library(gridExtra)
 
 source(here('R/funcs.R'))
+
+# water quality change ------------------------------------------------------------------------
+
+load(url('https://github.com/tbep-tech/piney-point-manu/raw/refs/heads/main/data/rswqdat.RData'))
+load(url('https://github.com/tbep-tech/piney-point-manu/raw/refs/heads/main/data/bswqdat.RData'))
+load(url('https://github.com/tbep-tech/piney-point-manu/raw/refs/heads/main/data/ppseg.RData'))
+load(url('https://github.com/tbep-tech/piney-point-manu/raw/refs/heads/main/data/rsstatloc.RData'))
+load(url('https://github.com/tbep-tech/piney-point-manu/raw/refs/heads/main/data/bsstatloc.RData'))
+load(url('https://github.com/tbep-tech/piney-point-manu/raw/refs/heads/main/data/parms.RData'))
+
+p1 <- wqplo_fun(rswqdat, bswqdat, ppseg, vr = 'tn', logtr = TRUE, ttl = '(a) Total Nitrogen', ylb = 'mg/L (log-scale)')
+p2 <- wqplo_fun(rswqdat, bswqdat, ppseg, vr = 'chla', logtr = TRUE, ttl = '(b) Chlorophyll-a', 
+                ylb = expression(paste(mu, 'g/L (log-scale)')), addrect = T)
+p3 <- wqplo_fun(rswqdat, bswqdat, ppseg, vr = 'secchi', logtr = FALSE, ttl = '(c) Secchi', ylb = 'meters')
+
+p <- (p1 + p2 + p3 + plot_layout(ncol = 3)) / wrap_elements(grid::textGrob('Week of', gp = grid::gpar(fontsize=12))) + 
+  plot_layout(ncol = 1, guides = 'collect', height = c(1, 0.07)) & 
+  theme(legend.position = 'top')
+
+png(here("figs", "wqchange.png"), width = 8.5, height = 3.5, units = "in", res = 400)
+print(p)
+dev.off()
 
 # seagrass change -----------------------------------------------------------------------------
 
@@ -38,6 +64,9 @@ toplo <- allmngests |>
 tomap1 <- inner_join(sgmanagement, toplo, by = c('areas' = 'Areas'))
 
 maxv <- max(abs(tomap1$diffacres))
+
+ppt <- tibble(lat = 27.6293999448385, lon = -82.52936862182267) |> 
+  st_as_sf(coords = c('lon', 'lat'), crs = 4326)
 
 # colors
 colgrn <- c("#F7FCF5", "#E5F5E0", "#C7E9C0", "#A1D99B", "#74C476", "#41AB5D", 
@@ -82,6 +111,8 @@ m1 <- ggplot2::ggplot() +
   tidyterra::geom_spatraster_rgb(data = tls, maxcell = 1e8) +
   ggplot2::geom_sf(data = tomap1, aes(fill = tomap1$diffacres), color = 'black', inherit.aes = F, alpha = 0.7) +
   ggplot2::geom_sf_label(data = totxt, ggplot2::aes(label = lab), size = 3, alpha = 0.8, inherit.aes = F) +
+  ggplot2::geom_sf(data = ppt, color = 'black', size = 3, shape = 17, inherit.aes = F) +
+  ggplot2::geom_sf_text(data = ppt, aes(label = 'Piney Point'), size = 3, hjust = 0, vjust = 0.2, nudge_x = 0.015, inherit.aes = F, ) +
   scale_fill_gradientn(
     colors = c(rev(colred), colgrn),
     values = scales::rescale(c(seq(-maxv, 0, length.out = length(colred)),
@@ -93,9 +124,10 @@ m1 <- ggplot2::ggplot() +
   ggspatial::annotation_scale(location = 'bl', unit_category = 'metric', height = unit(0.2, "cm"), text_cex = 0.5) +
   ggspatial::annotation_north_arrow(location = 'tl', height = unit(1, 'cm'), width = unit(1, 'cm')) +
   labs(
-    fill = 'Change in acres, 2020 - 2022'
+    fill = '(a) Change in acres'
   )
 
+m1
 dat_ext <- dat_ext %>% 
   sf::st_as_sfc(dat_ext) %>% 
   sf::st_transform(crs = 4326) %>% 
@@ -114,13 +146,15 @@ m2 <- ggplot2::ggplot() +
   tidyterra::geom_spatraster_rgb(data = tls, maxcell = 1e8) +
   ggplot2::geom_sf(data = tomap2, aes(fill = var), color = NA, inherit.aes = F, alpha = 0.7) +
   ggplot2::geom_sf(data = tomap1, fill = NA, color = 'black', inherit.aes = F, alpha = 0.7) +
-  scale_fill_manual(values = c('lost' = "#EF3B2C", gained = "#41AB5D")) +
+  ggplot2::geom_sf(data = ppt, color = 'black', size = 3, shape = 17, inherit.aes = F) +
+  ggplot2::geom_sf_text(data = ppt, aes(label = 'Piney Point'), size = 3, hjust = 0, vjust = 0.2, nudge_x = 0.015, inherit.aes = F, ) +
+  scale_fill_manual(values = c('lost' = "red", gained = "green")) +
   thm + 
   theme(
     axis.text.y = ggplot2::element_blank()
   ) +
   labs(
-    fill = 'Areas lost or gained, 2020 - 2022'
+    fill = '(b) Areas lost or gained'
   ) +
   ggplot2::coord_sf(xlim = dat_ext[c(1, 3)], ylim = dat_ext[c(2, 4)], expand = FALSE, crs = 4326)
 
