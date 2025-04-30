@@ -208,7 +208,6 @@ m1 <- ggplot2::ggplot() +
     fill = '(a) Change in acres'
   )
 
-m1
 dat_ext <- dat_ext %>% 
   sf::st_as_sfc(dat_ext) %>% 
   sf::st_transform(crs = 4326) %>% 
@@ -248,57 +247,18 @@ dev.off()
 
 # site closure from emails --------------------------------------------------------------------
 
-load(file = here::here('data/email_bodies.RData'))
-
-email_df <- data.frame(
-  subject = sapply(email_bodies, function(x) x$subject),
-  date = sapply(email_bodies, function(x) x$date),
-  body = sapply(email_bodies, function(x) ifelse(length(x$body) == 0, NA, x$body[[1]])),
-  stringsAsFactors = FALSE
-)
-
-gallons_pattern <- "^.*Approximately(.*)are currently held within the NGS-South compartment.*$"
-capacity_pattern <- "^.*The current storage capacity for additional rainfall at the site is approximately(.*) This capacity.*$"
-transfer_pattern <- "^.*to date(.*)have been transferred.*$"
-inject_pattern <- "[^.!?]*\\bUIC\\b[^.!?]*[.!?]"
-
-emailproc <- email_df |> 
-  dplyr::filter(grepl('^Piney Point Update –.*', subject)) |> 
-  dplyr::filter(!is.na(body)) |> 
-  mutate(
-    instorcur = gsub(capacity_pattern, '\\1', body),
-    mgallcur = gsub(gallons_pattern, '\\1', body),
-    mgallcur = gsub('\\D+', '', mgallcur), 
-    # trancur = gsub(transfer_pattern, '\\1', body), 
-    # injccur = regexpr(inject_pattern, body, perl = TRUE),
-    # injccur = ifelse(injccur != -1, trimws(regmatches(body, injccur)[[1]]), NA)
-    .by = c('subject', 'date', 'body')
-  ) |> 
-  mutate(
-    mgallcur = as.numeric(gsub('\\D+', '', mgallcur)), 
-    instorcur = gsub("[^0-9.]", "", instorcur),
-    instorcur = as.numeric(gsub('\\.$', '', instorcur)), 
-    date = as.Date(strptime(date, format="%a, %d %b %Y %H:%M:%S %z"))
-  ) 
+load(file = here::here('data/emailpars.RData'))
 
 lbs <- tibble(
-  dts = as.Date(c('2022-09-28', '2022-11-11', '2023-04-01', '2023-08-30', '2024-09-26', '2024-10-10')),
-  labs = c('Hurricane\nIan', 'Hurricane\nNicole', 'Injection\nonline', 'Hurricane\nIdalia', 'Hurricane\nHelene', 'Hurricane\nMilton')
+  dts = as.Date(c('2022-09-28', '2022-11-11', '2023-04-01', '2023-08-30', '2023-09-19', '2024-09-26', '2024-10-10')),
+  labs = c('Hurricane\nIan', 'Hurricane\nNicole', 'Injection\nonline', 'Hurricane\nIdalia', 'OGS-S closed', 'Hurricane\nHelene', 'Hurricane\nMilton')
 ) |> 
   crossing(
     type = factor(c('mgallcur', 'instorcur'), levels = c('mgallcur', 'instorcur'), labels = c('NGS-S million gallons', 'Site rainfall\n capacity (inches)'))
   ) |> 
   filter(type == 'NGS-S million gallons')
 
-toplo <- emailproc |> 
-  select(date, instorcur, mgallcur) |> 
-  bind_rows(
-    tibble(
-      date = as.Date(c('2024-08-09', '2024-10-25')),
-      instorcur = c(90, 76),
-      mgallcur = c(160.2, 193)
-    )
-  ) |>
+toplo <- emailpars |> 
   pivot_longer(cols = c(instorcur, mgallcur), names_to = "type", values_to = "value") |> 
   mutate(
     type = factor(type, levels = c("mgallcur", "instorcur"), labels = c('NGS-S million gallons', 'Site rainfall\n capacity (inches)'))

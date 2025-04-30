@@ -61,9 +61,57 @@ extract_email_body <- function(message_id) {
 }
 
 # Apply the function to each email found
-email_bodies <- lapply(all_message_ids, extract_email_body)
+emailbody <- lapply(all_message_ids, extract_email_body)
 
-save(email_bodies, file = here::here("data/email_bodies.RData"))
+save(emailbody, file = here::here("data/emailbody.RData"))
+
+# parse email ---------------------------------------------------------------------------------
+
+load(file = here::here('data/emailbody.RData'))
+
+email_df <- data.frame(
+  subject = sapply(emailbody, function(x) x$subject),
+  date = sapply(emailbody, function(x) x$date),
+  body = sapply(emailbody, function(x) ifelse(length(x$body) == 0, NA, x$body[[1]])),
+  stringsAsFactors = FALSE
+)
+
+gallons_pattern <- "^.*Approximately(.*)are currently held within the NGS-South compartment.*$"
+capacity_pattern <- "^.*The current storage capacity for additional rainfall at the site is approximately(.*) This capacity.*$"
+transfer_pattern <- "^.*to date(.*)have been transferred.*$"
+inject_pattern <- "[^.!?]*\\bUIC\\b[^.!?]*[.!?]"
+
+emailproc <- email_df |> 
+  dplyr::filter(grepl('^Piney Point Update –.*', subject)) |> 
+  dplyr::filter(!is.na(body)) |> 
+  mutate(
+    instorcur = gsub(capacity_pattern, '\\1', body),
+    mgallcur = gsub(gallons_pattern, '\\1', body),
+    mgallcur = gsub('\\D+', '', mgallcur), 
+    # trancur = gsub(transfer_pattern, '\\1', body), 
+    # injccur = regexpr(inject_pattern, body, perl = TRUE),
+    # injccur = ifelse(injccur != -1, trimws(regmatches(body, injccur)[[1]]), NA)
+    .by = c('subject', 'date', 'body')
+  ) |> 
+  mutate(
+    mgallcur = as.numeric(gsub('\\D+', '', mgallcur)), 
+    instorcur = gsub("[^0-9.]", "", instorcur),
+    instorcur = as.numeric(gsub('\\.$', '', instorcur)), 
+    date = as.Date(strptime(date, format="%a, %d %b %Y %H:%M:%S %z"))
+  ) 
+
+emailpars <- emailproc |> 
+  select(date, instorcur, mgallcur) |> 
+  bind_rows(
+    tibble( # not in emails, see updates at  bottom of page here: https://floridadep.gov/water/mining-mitigation-0
+      date = as.Date(c('2024-08-09', '2024-10-25')),
+      instorcur = c(90, 76),
+      mgallcur = c(160.2, 193)
+    )
+  ) |>
+  arrange(date)
+
+save(emailpars, file = here('data/emailpars.RData'))
 
 # three bay counties --------------------------------------------------------------------------
 
