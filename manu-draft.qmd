@@ -100,31 +100,25 @@ Public response to the events of 2021 was a significant factor influencing futur
 
 ### Classroom discussion questions
 
-1. This chapter has focused on the long-term recovery of Tampa Bay and its recent challenges, often evaluating the change in seagrasses as a means to evaluate the bay's response to chronic and acute stressors.  Seagrass cover in Tampa Bay has changed dramatically over time showing an increase over the last several decades, a recent decline from 2016 to present, and potential changes before and after the discharge from Piney Point in 2021.  Discuss what factors control seagrass growth in Tampa Bay and how conventional approaches to environmental management have leveraged these factors to improve conditions in the bay for seagrass.  How do these approaches compare both long-term for management as well in response to acute stressor events like Piney Point?
+1. This chapter has focused on the long-term recovery of Tampa Bay and its recent challenges, often evaluating the change in seagrasses as a means to evaluate the bay's response to chronic and acute stressors.  Seagrass cover in Tampa Bay has changed dramatically over time showing an increase over the last several decades, a recent decline from 2016 to present, and potential changes before and after the discharge from Piney Point in 2021.  Discuss what factors control seagrass growth in Tampa Bay and how conventional approaches to environmental management have leveraged these factors to improve conditions in the bay for seagrass.  How do these approaches compare for long-term management or in response to acute stressor events like Piney Point?
 
-1. Although the events of 2021 were unprecedented, the ability of environmental managers to respond to changes in the bay and document the impacts was a demonstration of the value of past partnership in the region.  The Tampa Bay Estuary Program (TBEP) was fundamental to this effort.  Discuss the role of the TBEP and its partners in coordinating a response to the Piney Point event.  What type of information was collected and why was it important for understanding impacts to the bay? How did the rapid response benefit from past partnerships and relationships?  How can other regional management programs learn from these examples to improve their own response to similar events?
+1. Although the events of 2021 were unprecedented, the coordinated monitoring response was not.  The ability of environmental managers to respond to changes in the bay and document the impacts was a demonstration of the value of past partnership in the region.  The Tampa Bay Estuary Program (TBEP) was fundamental to this effort.  Discuss the role of the TBEP and its partners in coordinating a response to the Piney Point event.  What type of information was collected and why was it important for understanding impacts to the bay? How did the rapid response benefit from past partnerships and relationships?  How can other regional management programs learn from these examples to improve their own response to similar events?
 
-1. Discuss the challenges of fertilizer production that makes it problematic for the environment. 
+1. Central Florida has been a global headquarters for the extraction and production of fertilizer.  What geological characteristics make this area favorable for fertilizer production?  Discuss the challenges of fertilizer production that make it problematic for the environment.  Why are gypstacks created and what makes them difficult to manage from an environmental perspective?  Are there any alternative solutions you can think of for minimizing long-term harm on the environment from these facilities? Do you feel that the economic benefits justify continued fertilizer production relative to the impacts from Piney Point and other facilities in the region?
 
-1. Piney Point was a disaster waiting to happen. Describe the history of Piney Point and key decisions that led to the state of the facility in 2021.  Where and when do you think critical decisions were made that were most influential. 
-
-Include at least 3 discussion questions based on the case study that can be used in a classroom situation.
-
-My notes:
-
-Something about communication/transparency of information 
-
-Something about history of past partnerships, why were they so important
-
-Something about reactive v proactive, i.e., Piney Point was a disaster waiting to happen, but somethign was only done once it happened.  What are the forces at play that prevent proactive action?
+1. Piney Point was a disaster waiting to happen. Describe the history of Piney Point and key decisions that led to the state of the facility in 2021.  Where and when do you think critical decisions were made or not made that contributed to the ultimate decision to release wastewater into Tampa Bay.  Make sure to identify the key players involved in these decisions and what entity they represent that could influence their choices on factors contributing to the events of 2021.  Do you think any one party was to blame?  How can all parties be more proactive in the future to prevent similar events from occurring?
 
 ### Individual student responses
 
-Include at least 3 questions/prompts based on the case study that can be used in a homework assignment or on an exam. These could include further reading (be sure to provide references to readily available materials) or personal reflections.
+1. Examine the trends in water quality parameters in [@fig-wqchange].  Develop a narrative for how water quality changes influenced the ecology of Tampa Bay from April to September 2021, including how characteristics of the wastewater had cascading effects on other aspects of Tampa Bay.  Link these changes to trends you observe in [@fig-fishkill] and [@fig-seagrasschange].
 
-My notes:
+1. Given what you've learned about the long-term recovery in Tampa Bay, do you think the bay would have responded differently to a large wastewater release from Piney Point if a similar event had occurred 40 years ago?  Which environmental resources of the bay would most be at risk compared to today? 
 
-Something about interpretation of the figures/tables in this chapter
+1. Many options were considered to process and remove wastewater from Piney Point as part of the long-term closure plan.  Ultimately, deep well injection was chosen as the preferred method.  Conduct a short literature review of this method for wastewater disposal to identify the risks and benefits relative to other methods. 
+
+1. In addition to long-term closure, several entities were required to provide monetary compensation as a result of the impacts to Tampa Bay from the 2021 wastewater discharge. Identify similar cases in the past where environmental disasters have led to financial compensation to remediate impacts.  Based on these past studies, do you feel the compensation for Piney Point was sufficient in light of the impacts that were observed?
+
+1. Environmental managers must consider multiple factors that influence environmental health and how they can be effectively monitored and controlled for long-term sustainability.  Piney Point is one example of an external threat to Tampa Bay that requires management to reduce enviornment impacts.  What other factors in the Tampa Bay region do managers consider for protecting water quality?  
 
 ## Conclusion (500-1000 words)
 
