@@ -178,3 +178,15 @@ fishdat <- fishdat |>
   )
 
 save(fishdat, file = here('data/fishdat.RData'))
+
+# gypstacks -----------------------------------------------------------------------------------
+
+data(tbshed, package = 'tbeptools')
+
+# make new column to indicate T/F if in tbshed
+dat <- st_read(here('data-raw/Florida_Gypsumstacks.geojson')) |> 
+  st_centroid() |> 
+  mutate(
+    in_tbshed = st_intersects(geometry, tbshed, sparse = FALSE)
+  )
+  
