@@ -26,11 +26,13 @@ p2 <- wqplo_fun(rswqdat, bswqdat, ppseg, vr = 'chla', logtr = TRUE, ttl = '(b) C
                 ylb = expression(paste(mu, 'g/L (log-scale)')), addrect = T)
 p3 <- wqplo_fun(rswqdat, bswqdat, ppseg, vr = 'secchi', logtr = FALSE, ttl = '(c) Secchi', ylb = 'meters')
 
-p <- (p1 + p2 + p3 + plot_layout(ncol = 3)) / wrap_elements(grid::textGrob('Week of', gp = grid::gpar(fontsize=12))) + 
-  plot_layout(ncol = 1, guides = 'collect', height = c(1, 0.07)) & 
-  theme(legend.position = 'top')
+p <- (p1 + p2 + p3 + plot_layout(ncol = 1)) / wrap_elements(grid::textGrob('Week of', gp = grid::gpar(fontsize=12))) + 
+  plot_layout(ncol = 1, guides = 'collect', height = c(1, 1, 1, 0.1)) & 
+  theme(
+    legend.position = 'bottom'
+  )
 
-png(here("figs", "wqchange.png"), width = 8.5, height = 3.5, units = "in", res = 400)
+png(here("figs", "wqchange.png"), width = 7, height = 7, units = "in", res = 400)
 print(p)
 dev.off()
 

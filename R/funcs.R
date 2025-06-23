@@ -133,13 +133,13 @@ wqplo_fun <- function(rswqdat, bswqdat, ppseg, vr, logtr = TRUE, rmfacet = FALSE
       title = ttl
     ) + 
     coord_cartesian(xlim = range(rswqtmp$date)) +
-    theme_minimal(base_size = 11) + 
+    theme_minimal(base_size = 11) +
     theme(
-      legend.position = 'top', 
+      legend.position = 'bottom', 
       strip.background = element_blank(), 
       axis.title.x = element_blank(),
       panel.grid.minor = element_blank(),
-      axis.text.x = element_text(size = 4.5, angle = 45, hjust = 1)
+      axis.text.x = element_text(size = 10, angle = 45, hjust = 1)
     )
   
   if(logtr)
@@ -186,12 +186,12 @@ wqplo_fun <- function(rswqdat, bswqdat, ppseg, vr, logtr = TRUE, rmfacet = FALSE
         xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = Inf
       ) + 
       geom_text(
-        aes(x = as.Date("2021-03-24"), y = 0.5, label = "diatoms"),
-        color = cols, size = 2.5, hjust = -0.05
+        aes(x = as.Date("2021-04-11"), y = 0.75, label = "diatoms"),
+        color = cols, size = 3, hjust = 0.5
       ) +
       geom_text(
-        aes(x = as.Date("2021-06-02"), y = 0.5, label = "red tide"),
-        color = cols, size = 2.5, hjust = -0.05
+        aes(x = as.Date("2021-06-27"), y = 0.75, label = "red tide"),
+        color = cols, size = 3, hjust = 0.5
       )
     
   }
