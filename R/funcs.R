@@ -139,7 +139,7 @@ wqplo_fun <- function(rswqdat, bswqdat, ppseg, vr, logtr = TRUE, rmfacet = FALSE
       strip.background = element_blank(), 
       axis.title.x = element_blank(),
       panel.grid.minor = element_blank(),
-      axis.text.x = element_text(size = 10, angle = 45, hjust = 1)
+      axis.text.x = element_text(size = 8, angle = 45, hjust = 1)
     )
   
   if(logtr)
