@@ -138,7 +138,7 @@ Countless examples exist worldwide that demonstrate the tradeoffs of human use a
 
 {{< pagebreak >}}
 
-![The Tampa Bay watershed and Piney Point.  Bay segments, holding ponds, and other relevant locations are shown. County boundaries are labeled with paired county names. NGS-N: New Gypsum Stack North; NGS-S: New Gypsum Stack South; OGS-N: Old Gypsum Stack North; OGS-S: Old Gypsum Stack South. Basemap credits: Esri, HERE, Garmin, OpenStreetMap, Maxar, and Earthstar Geographics.](figs/map.jpg){#fig-map}
+![The Tampa Bay watershed and Piney Point.  Bay segments, phosphogypsum stack holding ponds, and other relevant locations are shown. County boundaries are labeled with paired county names. NGS-N: New Gypsum Stack North; NGS-S: New Gypsum Stack South; OGS-N: Old Gypsum Stack North; OGS-S: Old Gypsum Stack South. Basemap credits: Esri, HERE, Garmin, OpenStreetMap, Maxar, and Earthstar Geographics.](figs/map.jpg){#fig-map}
 
 {{< pagebreak >}}
 
@@ -146,7 +146,7 @@ Countless examples exist worldwide that demonstrate the tradeoffs of human use a
 
 {{< pagebreak >}}
 
-![Water quality changes from March to September 2021 near Port Manatee at the discharge point.  Monitoring data are shown for (a) total nitrogen for nutrients, (b) chlorophyll-a as an indicator of algal production, and (c) Secchi depth as a measure of water clarity.  Monthly baseline ranges are shown in blue as an estimate of normal conditions from the past fifteen years.  Notable algal bloom events as shown by increases in chlorophyll-a are shown in (b).  Data sources described in @beck2022a.](figs/wqchange.png){#fig-wqchange}
+![Water quality changes from March to September 2021 near Port Manatee at the emergency discharge point.  Monitoring data are shown for (a) total nitrogen for nutrients, (b) chlorophyll-a as an indicator of algal production, and (c) Secchi depth as a measure of water clarity.  Monthly baseline ranges are shown in blue as an estimate of normal conditions from the past fifteen years.  Notable algal bloom events as shown by increases in chlorophyll-a are shown in (b).  Data sources described in @beck2022a.](figs/wqchange.png){#fig-wqchange}
 
 {{< pagebreak >}}
 
@@ -158,7 +158,7 @@ Countless examples exist worldwide that demonstrate the tradeoffs of human use a
 
 {{< pagebreak >}}
 
-![Progress to date closing the NGS-S holding pond at Piney Point. The top plot shows the volume of water in the pond and the bottom plot shows the overall capacity of Piney Point to accommodate additional stormwater, inclusive of the volume of water onsite and rainfall.  Key events affecting the closure process are shown by the horizontal lines. Data from the Florida Department of Environmental Protection.](figs/siteclose.png){#fig-capacity}
+![Progress to date closing the NGS-S holding pond at Piney Point. The top plot shows the volume of water in the pond and the bottom plot shows the overall capacity of Piney Point to accommodate additional stormwater, inclusive of the volume of water onsite and additional rainfall.  Key events affecting the closure process are shown by the horizontal lines. Data from the Florida Department of Environmental Protection.](figs/siteclose.png){#fig-capacity}
 
 {{< pagebreak >}}
 
