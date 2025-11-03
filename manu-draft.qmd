@@ -46,13 +46,13 @@ library(knitr)
 library(here)
 ```
 
-## Abstract (150-250 words) {.unnumbered}
+## Abstract {.unnumbered}
 
 Mining activities can support local and global economies, yet also impose significant consequences for the natural environment. Phosphate mining in central Florida has been ongoing for decades and many facilities present risks to freshwater and coastal aquatic environments in the state. In 2021, a breach in the liner of a wastewater holding pond at Piney Point, a legacy phosphate processing facility, resulted in the emergency discharge of 215 million gallons of highly acidic and nutrient-laden (nitrogen, phosphorus) wastewater into Tampa Bay. A multi-agency, event-response monitoring program resulted and documented subsequent ecosystem impacts. Declines in water quality were observed, with a notable harmful algal bloom and substantial fish kills occurring three months after the initial wastewater release. Acute spills such as the 2021 event threaten to reverse past successes in seagrass and ecosystem recovery in Tampa Bay.  Currently, the site is being closed and efforts to mitigate or prevent future impacts are ongoing. This chapter will present the historical context and management of Piney Point as a precursor to the events of 2021, while providing quantitative examples of the Bay's response relative to its long-term recovery. The role of the Tampa Bay Estuary Program (TBEP) as a non-regulatory institution that works to build public and private partnerships for environmental management will also be explored, with emphasis on TBEP's role coordinating monitoring efforts and disseminating communication products throughout the event.
 
 {{< pagebreak >}}
 
-## Introduction (500-1500 words)
+## Introduction
 
 The contemporary history of Tampa Bay, Florida serves as an exemplary model for how collaborative efforts among public and private entities can lead to long-term environmental improvements. In February 1974, a news segment airing on the television program Sixty Minutes drew national attention to the effects of population growth and unchecked development in the Tampa Bay region. The Bay’s natural resources, including commercially and ecologically important fisheries that rely on healthy estuarine habitats such as seagrass meadows, exhibited stress from the pressures of a growing human population within the watershed. The discharge of minimally treated wastewater into Tampa Bay was a key factor contributing to ecosystem decline. Nutrient discharges, particularly nitrogen, triggered algal blooms that reduced light penetration in the water column, resulting in loss of seagrasses ([@fig-seagrassnutrients]). Over the following decades, efforts to restore Tampa Bay were successful in reducing pollutants from wastewater and other external sources by 2/3 of levels observed in the 1970s [@greening2006;@greening2014].  By 2016, seagrasses had recovered to a recorded high of 41,655 acres, exceeding the management goal by several thousand acres [@sherwood2017]. 
 
@@ -78,7 +78,7 @@ The TBEP, in collaboration with multiple local, regional, and state entities, co
 
 This chapter will provide an overview of the history of the Piney Point facility and the effects on the Bay during and after the wastewater release, including incidents that occurred before 2021.  This information is presented in the context of the long-term recovery of Tampa Bay, the effects on seagrass resources, and how the history of local partnerships were important for the response-based effort.  The reader should gain an understanding of how past events, both historically and leading up to 2021, influenced the decision to release wastewater to Tampa Bay and what actions can be taken in the future to prevent similar events from occurring.  The role of TBEP as a facilitator for Bay management will be emphasized, and the reader should reflect on how past activities of the Program were important for responding to the Piney Point event and dealing with future challenges for managing Bay resources based on the details presented herein. 
 
-## Background (1000-2000 words)
+## Background
 
 The "Bone Valley" in central Florida has supported a multi-billion dollar mining industry for several decades [@henderson2004].  Its namesake refers to the geological characteristics of the region, or karst geology, where fossilized marine organisms have created a phosphorus-rich overburden on top of a limestone base overlying a freshwater aquifer. The phosphorus-rich matrix is mined as a main ingredient of commercially available fertilizer, used for either residential applications or large-scale agricultural production. All active mines in the Tampa Bay watershed are currently owned and operated by Mosaic Co.
 
@@ -108,7 +108,7 @@ During litigation, public calls for the closure of Piney Point led to the develo
 
 The 2021 Piney Point emergency discharge has brought additional attention to the impacts of phosphate-mining facilities on the environment, renewing focus on the risks and impending closure activities for other facilities in the Tampa Bay watershed. Florida has 25 such facilities, with over 2/3 of these in the Tampa Bay watershed alone [@fdep2025].  Only two of the seventeen gypstacks in the watershed are still actively processing fertilizer, whereas the remainder are closed or inactive. In some respects, the approval by FDEP to remove wastewater by deep-well injection at Piney Point may set a precedent for future closure activities since long-term plans for many of these facilities have not been established.  Deep-well injection has been proposed in the past to facilitate closures of inactive phosphate mining sites, although the method has not been viewed favorably by the public given the uncertainty about the associated risks or general misinformation about deep-well injection.  Although deep-well injected wastewater is pumped much lower than the freshwater aquifer that serves as a source of drinking water for many in Florida, the extent to which this water could migrate to other aquifers or surface waters is not well understood. Perhaps a larger risk is the integrity of the injection site since leaks at more shallow depths could also introduce the wastewater into drinking water or other non-potable aquifer uses. Phosphogypsum has also been proposed for use as a base material for road construction and FDEP has allowed a preliminary test site to assess the risks of doing so in central Florida. Critics argue these materials may pose safety risks to road workers and serve as an additional source of contamination to surface and ground waters. Regardless of whether these alternatives are a practical means of safely and responsibly closing inactive mining facilities, their application does suggest recognition by fertilizer producers that these facilities are substantial liabilities that require more attention to mitigate external environmental impacts.  It is unclear whether current state and federal regulatory requirements appropriately factor in the full scope of environmental and financial liabilities that these facilities pose in Florida.
 
-## Student Activities (500-1000 words)
+## Student Activities
 
 ### Classroom discussion questions
 
@@ -134,7 +134,7 @@ The 2021 Piney Point emergency discharge has brought additional attention to the
 
 1. Environmental managers must consider multiple factors that influence environmental health and how they can be effectively monitored and controlled for long-term sustainability of natural resources.  Piney Point is only one example of an external threat to Tampa Bay that requires regulation and management to reduce environmental impacts.  Discuss the other factors in the Tampa Bay region that managers must consider when developing strategies to protect water quality.
 
-## Conclusion (500-1000 words)
+## Conclusion
 
 This chapter provided an in-depth explanation of the factors that led to the decision to discharge 215 million gallons of wastewater from Piney Point, and the subsequent effects on the natural resources of Tampa Bay.  This decision and its impacts were discussed in the historical context of the history of the Piney Point facility and the long-term recovery of Tampa Bay over several decades.  Overall, a narrative of environmental management was provided that highlighted the importance of partnerships and collaboration in the region to respond to acute stressors. 
 
